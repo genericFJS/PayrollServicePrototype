@@ -39,6 +39,8 @@ namespace PayrollServicePrototype
             {
                 new Employee(countries.Where(country => country.CountryCode == "DEU").FirstOrDefault(), 20, 10), // from description
                 new Employee(countries.Where(country => country.CountryCode == "DEU").FirstOrDefault(), 35, 30), // example
+                new Employee(countries.Where(country => country.CountryCode == "SPA").FirstOrDefault(), 35, 30), // example
+                new Employee(countries.Where(country => country.CountryCode == "ITA").FirstOrDefault(), 35, 30), // example
             }));
             config.DependencyResolver = new UnityResolver(container);
 
