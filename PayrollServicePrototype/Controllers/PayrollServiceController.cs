@@ -1,4 +1,5 @@
 ﻿using PayrollServicePrototype.Models;
+using System.Collections.Generic;
 using System.Web.Http;
 
 namespace PayrollServicePrototype.Controllers
@@ -12,14 +13,9 @@ namespace PayrollServicePrototype.Controllers
             Repository = repository;
         }
 
-        public IHttpActionResult Get(string countryCode)
+        public List<Employee> Get(string countryCode)
         {
-            var product = Repository.GetByCountry(countryCode);
-            if (product == null)
-            {
-                return NotFound();
-            }
-            return Ok(product);
+            return Repository.GetByCountry(countryCode);
         }
     }
 }
