@@ -1,7 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using PayrollServicePrototype.Util;
+using System.Net.Http.Headers;
 using System.Web.Http;
+using Unity;
 
 namespace PayrollServicePrototype
 {
@@ -10,6 +10,14 @@ namespace PayrollServicePrototype
         public static void Register(HttpConfiguration config)
         {
             // Web API configuration and services
+
+            // JSON Default
+            config.Formatters.JsonFormatter.SupportedMediaTypes.Add(new MediaTypeHeaderValue("text/html"));
+
+            // Dependency Injection Container
+            var container = new UnityContainer();
+            //container.RegisterInstance <...> (...);
+            config.DependencyResolver = new UnityResolver(container);
 
             // Web API routes
             config.MapHttpAttributeRoutes();
