@@ -99,6 +99,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Country.cs" />
+    <Compile Include="Models\CountryProvider.cs" />
     <Compile Include="Models\FlatTax.cs" />
     <Compile Include="Models\IEmployeeRepository.cs" />
     <Compile Include="Models\Employee.cs" />
