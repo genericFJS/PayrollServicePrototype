@@ -11,7 +11,7 @@ Endpoint ``/api/payrollservice/DEU`` returns
 ```json
 [
     {
-		"countryCode":"DEU",
+        "countryCode":"DEU",
         "grossSalary":200.0,
          "taxesDeductions":54.00,
          "netSalary":146.00
