@@ -17,5 +17,10 @@ namespace PayrollServicePrototype.Controllers
         {
             return Repository.GetByCountry(countryCode);
         }
+
+        public Employee Get(string countryCode, decimal hoursWorked, decimal hourlyRate)
+        {
+            return new Employee(CountryProvider.Instance.CountryByCode(countryCode), hoursWorked, hourlyRate);
+        }
     }
 }
