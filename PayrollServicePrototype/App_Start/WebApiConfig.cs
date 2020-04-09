@@ -14,7 +14,7 @@ namespace PayrollServicePrototype
             // Web API configuration and services
 
             // JSON Default
-            config.Formatters.JsonFormatter.SupportedMediaTypes.Add(new MediaTypeHeaderValue("text/html"));
+            config.Formatters.JsonFormatter.SupportedMediaTypes.Add(new MediaTypeHeaderValue("application/json"));
 
             var countryProvider = CountryProvider.Instance;
             countryProvider.Countries.Add(new Country("SPA", new List<Tax>()
