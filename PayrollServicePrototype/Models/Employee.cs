@@ -16,12 +16,12 @@ namespace PayrollServicePrototype.Models
         public decimal NetSalary { get; set; }
         private Country Country { get; }
 
-        public Employee(Country country, double hoursWorked, double hourlyRate)
+        public Employee(Country country, decimal hoursWorked, decimal hourlyRate)
         {
             /// TODO: check for only positive hours/rates
             Country = country ?? throw new ArgumentNullException(nameof(country));
 
-            GrossSalary = (decimal)(hoursWorked * hourlyRate);
+            GrossSalary = hoursWorked * hourlyRate;
 
             TaxesDeductions = Country.CalculateDeductions(GrossSalary);
 
